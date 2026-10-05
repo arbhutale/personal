@@ -45,6 +45,7 @@ export const PERSONAL_INFO = {
   email: "anil-kumar.bhutale@outlook.com",
   linkedin: "https://linkedin.com/in/anil-kumar-bhutale",
   github: "https://github.com/anilkumarbhutale",
+  website: "https://ar.bhutale.in",
   tagline: "Architecting Enterprise AI Agents, RAG Evaluation Pipelines & Multi-Cloud Solutions (AWS / Google Cloud)",
   bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of expertise building enterprise-scale platforms, AI-powered systems, and multi-cloud solutions using Python, FastAPI, React.js, Node.js, Google Cloud (Vertex AI, Gemini, Cloud Run), AWS, and Docker. Proven specialist in orchestrating multi-agent RAG pipelines, LangGraph workflows, AI agent evaluation (Ragas, TruLens, LangSmith), vector retrieval benchmarks, and automated CI/CD DevOps architectures.",
 };

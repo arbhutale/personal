@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, EDUCATION } from '../data/portfolioData';
-import { X, Printer, Download, Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { X, Printer, Download, Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Globe } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -18,10 +18,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto max-h-[92vh] overflow-y-auto print:max-h-none print:shadow-none print:p-0 print:m-0">
+      <div className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto max-h-[92vh] overflow-y-auto print:max-h-none print:shadow-none print:p-0 print:m-0 font-sans">
         
         {/* Floating Action Controls (Hidden on print) */}
-        <div className="sticky top-0 right-0 z-20 flex items-center justify-end gap-2 pb-4 -mt-2 bg-white/90 backdrop-blur-sm print:hidden border-b border-slate-200 mb-6">
+        <div className="sticky top-0 right-0 z-20 flex items-center justify-end gap-2 pb-4 -mt-2 bg-white/90 backdrop-blur-sm print:hidden border-b border-slate-200 mb-6 font-mono">
           <button
             onClick={handlePrint}
             className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"
@@ -44,10 +44,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           
           {/* Header */}
           <div className="text-center border-b border-slate-300 pb-5">
-            <h1 className="text-3xl font-black text-slate-950 tracking-tight">
+            <h1 className="text-3xl font-black text-slate-950 tracking-tight font-display">
               {PERSONAL_INFO.name}
             </h1>
-            <h2 className="text-base font-bold text-sky-700 uppercase tracking-wider mt-1">
+            <h2 className="text-sm sm:text-base font-bold text-sky-700 uppercase tracking-wider mt-1 font-mono">
               {PERSONAL_INFO.title}
             </h2>
 
@@ -59,13 +59,20 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5 text-slate-500" /> {PERSONAL_INFO.email}</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-2 text-xs font-mono text-sky-700">
-              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:underline">
-                linkedin.com/in/anil-kumar-bhutale
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-2.5 text-xs font-mono text-sky-700 font-bold">
+              <a href={PERSONAL_INFO.website} target="_blank" rel="noreferrer" className="hover:underline flex items-center gap-1">
+                <Globe className="w-3.5 h-3.5 text-sky-600" />
+                <span>ar.bhutale.in</span>
               </a>
               <span>•</span>
-              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:underline">
-                github.com/anilkumarbhutale
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:underline flex items-center gap-1">
+                <Linkedin className="w-3.5 h-3.5 text-sky-600" />
+                <span>linkedin.com/in/anil-kumar-bhutale</span>
+              </a>
+              <span>•</span>
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:underline flex items-center gap-1">
+                <Github className="w-3.5 h-3.5 text-sky-600" />
+                <span>github.com/anilkumarbhutale</span>
               </a>
             </div>
           </div>
