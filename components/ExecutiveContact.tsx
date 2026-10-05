@@ -17,13 +17,15 @@ import {
   ArrowUp,
   Award,
   Zap,
-  Terminal
+  Loader2
 } from 'lucide-react';
 
 export default function ExecutiveContact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
   const handleCopyEmail = () => {
@@ -38,18 +40,33 @@ export default function ExecutiveContact() {
     setTimeout(() => setCopiedPhone(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    
-    // Automatically trigger mailto link to direct the inquiry to your inbox
-    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    window.location.href = mailtoUrl;
+    setIsSubmitting(true);
+    setErrorMessage('');
 
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setFormSubmitted(false);
-    }, 4000);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to transmit message via SMTP.');
+      }
+
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormSubmitted(false);
+      }, 5000);
+    } catch (err: any) {
+      setErrorMessage(err?.message || 'Failed to dispatch inquiry. Please check your network connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToTop = () => {
@@ -285,12 +302,28 @@ export default function ExecutiveContact() {
                   />
                 </div>
 
+                {errorMessage && (
+                  <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 dark:text-red-400 text-xs font-mono">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-slate-900 text-white dark:bg-cyan-500 dark:text-slate-950 font-bold text-xs font-mono hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 active:scale-95"
+                  disabled={isSubmitting}
+                  className="w-full py-3 rounded-xl bg-slate-900 text-white dark:bg-cyan-500 dark:text-slate-950 font-bold text-xs font-mono hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 active:scale-95"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Transmit Message</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Transmitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Transmit Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
