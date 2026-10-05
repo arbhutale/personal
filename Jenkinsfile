@@ -13,6 +13,9 @@ pipeline {
     environment {
         NAMESPACE = 'personal'
         IMAGE_NAME = 'portfolio'
+        SMTP_HOST = 'smtp.office365.com'
+        SMTP_PORT = '587'
+        CONTACT_RECEIVER_EMAIL = 'anil-kumar.bhutale@outlook.com'
     }
 
     stages {
@@ -46,6 +49,11 @@ pipeline {
                 echo "===> Deploying to Kubernetes namespace ${env.NAMESPACE}..."
                 sh """
                     kubectl apply -f k8s/deployment.yaml
+                    kubectl set env deployment/${IMAGE_NAME} \
+                        SMTP_HOST="${env.SMTP_HOST}" \
+                        SMTP_PORT="${env.SMTP_PORT}" \
+                        CONTACT_RECEIVER_EMAIL="${env.CONTACT_RECEIVER_EMAIL}" \
+                        -n ${env.NAMESPACE} || true
                     kubectl rollout restart deployment/${IMAGE_NAME} -n ${env.NAMESPACE} || true
                     kubectl rollout status deployment/${IMAGE_NAME} -n ${env.NAMESPACE} --timeout=120s
                 """
