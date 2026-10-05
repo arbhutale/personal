@@ -8,6 +8,8 @@ pipeline {
             choices: ['personal', 'dev', 'prod'],
             description: 'Target Environment'
         )
+        string(name: 'SMTP_HOST', defaultValue: 'smtp.office365.com', description: 'SMTP Host (e.g. smtp.office365.com or smtp.gmail.com)')
+        string(name: 'SMTP_PORT', defaultValue: '587', description: 'SMTP Port (587 for TLS, 465 for SSL)')
         string(name: 'SMTP_USER', defaultValue: 'anil-kumar.bhutale@outlook.com', description: 'SMTP Username/Email')
         password(name: 'SMTP_PASS', defaultValue: '', description: 'SMTP / Outlook App Password (leave blank if using k8s secret)')
     }
@@ -15,8 +17,6 @@ pipeline {
     environment {
         NAMESPACE = 'personal'
         IMAGE_NAME = 'portfolio'
-        SMTP_HOST = 'smtp.office365.com'
-        SMTP_PORT = '587'
         CONTACT_RECEIVER_EMAIL = 'anil-kumar.bhutale@outlook.com'
     }
 
@@ -54,8 +54,8 @@ pipeline {
                     
                     # Set base SMTP variables
                     kubectl set env deployment/${IMAGE_NAME} \
-                        SMTP_HOST="${env.SMTP_HOST}" \
-                        SMTP_PORT="${env.SMTP_PORT}" \
+                        SMTP_HOST="${params.SMTP_HOST}" \
+                        SMTP_PORT="${params.SMTP_PORT}" \
                         CONTACT_RECEIVER_EMAIL="${env.CONTACT_RECEIVER_EMAIL}" \
                         SMTP_USER="${params.SMTP_USER}" \
                         -n ${env.NAMESPACE} || true
