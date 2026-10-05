@@ -225,11 +225,6 @@ html.dark .gradient-accent {
     size: A4 portrait;
   }
 
-  /* Hide entire main page, header, footer, canvas, and nav */
-  body > *:not(.resume-print-modal), main, header, footer, nav, canvas, .print\:hidden {
-    display: none !important;
-  }
-
   body {
     background: #ffffff !important;
     color: #0f172a !important;
@@ -237,7 +232,17 @@ html.dark .gradient-accent {
     print-color-adjust: exact;
   }
 
-  /* Force display of resume modal container */
+  /* Always hide navigation bars, footers, canvas backgrounds, and print-hidden controls */
+  header, footer, nav, canvas, .print\:hidden {
+    display: none !important;
+  }
+
+  /* Hide main website content ONLY when resume modal is open during print */
+  body:has(.resume-print-modal) main {
+    display: none !important;
+  }
+
+  /* Force display of resume modal sheet */
   .resume-print-modal {
     display: block !important;
     position: absolute !important;
