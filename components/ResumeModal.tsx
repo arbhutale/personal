@@ -17,8 +17,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto max-h-[92vh] overflow-y-auto print:max-h-none print:shadow-none print:p-0 print:m-0 font-sans">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn overflow-y-auto resume-print-modal">
+      <div id="resume-sheet-content" className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto max-h-[92vh] overflow-y-auto print:max-h-none print:shadow-none print:p-0 print:m-0 font-sans">
         
         {/* Floating Action Controls (Hidden on print) */}
         <div className="sticky top-0 right-0 z-20 flex items-center justify-between gap-2 pb-4 -mt-2 bg-white/90 backdrop-blur-sm print:hidden border-b border-slate-200 mb-6 font-mono text-xs">
