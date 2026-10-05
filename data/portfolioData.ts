@@ -37,16 +37,16 @@ export interface EvalMetric {
 }
 
 export const PERSONAL_INFO = {
-  name: "B. Anil Kumar",
-  title: "Senior Full Stack & Generative AI Engineer",
-  experienceYears: "8+",
+  name: "Bhutale Anil Kumar",
+  title: "Lead / Senior Full Stack & Generative AI Engineer",
+  experienceYears: "9+",
   location: "Hyderabad, India",
   phone: "+91 8500004216",
   email: "anil-kumar.bhutale@outlook.com",
   linkedin: "https://linkedin.com/in/anil-kumar-bhutale",
   github: "https://github.com/anilkumarbhutale",
   tagline: "Architecting Enterprise AI Agents, RAG Evaluation Pipelines & Multi-Cloud Solutions (AWS / Google Cloud)",
-  bio: "Senior Full Stack & Generative AI Engineer with 8+ years of expertise building enterprise-scale platforms, AI-powered systems, and multi-cloud solutions using Python, FastAPI, React.js, Node.js, Google Cloud (Vertex AI, Gemini, Cloud Run), AWS, and Docker. Proven specialist in orchestrating multi-agent RAG pipelines, LangGraph workflows, AI agent evaluation (Ragas, TruLens, LangSmith), vector retrieval benchmarks, and automated CI/CD DevOps architectures.",
+  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of expertise building enterprise-scale platforms, AI-powered systems, and multi-cloud solutions using Python, FastAPI, React.js, Node.js, Google Cloud (Vertex AI, Gemini, Cloud Run), AWS, and Docker. Proven specialist in orchestrating multi-agent RAG pipelines, LangGraph workflows, AI agent evaluation (Ragas, TruLens, LangSmith), vector retrieval benchmarks, and automated CI/CD DevOps architectures.",
 };
 
 export const EVAL_METRICS: EvalMetric[] = [

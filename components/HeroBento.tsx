@@ -49,7 +49,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
   const [simulating, setSimulating] = useState(false);
   const [activePromptTab, setActivePromptTab] = useState<'rag' | 'stack' | 'exp'>('rag');
   const [streamedText, setStreamedText] = useState(
-    "Anil is a Senior Full Stack & Generative AI Engineer with 8+ years experience specializing in LangGraph multi-agent systems, RAG & Ragas evaluation, Google Cloud (Vertex AI), and AWS cloud microservices."
+    "Anil is a Lead / Senior Full Stack & Generative AI Engineer with 9+ years experience specializing in LangGraph multi-agent systems, RAG & Ragas evaluation, Google Cloud (Vertex AI), and AWS cloud microservices."
   );
 
   const titles = [
@@ -393,7 +393,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 <span className="text-[10px] font-mono text-slate-400 block mt-1">AGENT TRAJECTORY</span>
               </div>
               <div className="bg-white/5 rounded-xl p-3.5 border border-white/10">
-                <span className="text-2xl font-extrabold font-mono text-amber-300">8+ Yrs</span>
+                <span className="text-2xl font-extrabold font-mono text-amber-300">9+ Yrs</span>
                 <span className="text-[10px] font-mono text-slate-400 block mt-1">ENGINEERING EXP</span>
               </div>
             </div>

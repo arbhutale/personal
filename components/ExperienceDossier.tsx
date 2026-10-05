@@ -33,7 +33,7 @@ export default function ExperienceDossier() {
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-md font-mono">
-          8+ years architecting mission-critical enterprise platforms, pioneering Generative AI applications, and engineering scalable cloud microservices.
+          9+ years architecting mission-critical enterprise platforms, pioneering Generative AI applications, and engineering scalable cloud microservices.
         </p>
       </div>
 
