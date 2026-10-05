@@ -23,29 +23,13 @@ spec:
         - containerPort: 3000
         env:
         - name: SMTP_HOST
-          valueFrom:
-            secretKeyRef:
-              name: smtp-secret
-              key: SMTP_HOST
-              optional: true
+          value: "smtp.office365.com"
         - name: SMTP_PORT
-          valueFrom:
-            secretKeyRef:
-              name: smtp-secret
-              key: SMTP_PORT
-              optional: true
+          value: "587"
         - name: SMTP_USER
-          valueFrom:
-            secretKeyRef:
-              name: smtp-secret
-              key: SMTP_USER
-              optional: true
+          value: "anil-kumar.bhutale@outlook.com"
         - name: SMTP_PASS
-          valueFrom:
-            secretKeyRef:
-              name: smtp-secret
-              key: SMTP_PASS
-              optional: true
+          value: ""
         - name: CONTACT_RECEIVER_EMAIL
           value: "anil-kumar.bhutale@outlook.com"
         resources:
