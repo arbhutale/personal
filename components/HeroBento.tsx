@@ -137,7 +137,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight leading-[1.08] text-slate-900 dark:text-white">
-              B. Anil <span className="gradient-accent">Kumar</span>
+              Bhutale Anil <span className="gradient-accent">Kumar</span>
             </h1>
 
             {/* Dynamic Rotating Title */}
