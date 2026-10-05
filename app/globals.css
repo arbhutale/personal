@@ -218,3 +218,39 @@ html.dark .gradient-accent {
   animation: cyberPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Print Stylesheet for ATS Resume PDF Export */
+@media print {
+  @page {
+    margin: 12mm 15mm;
+    size: A4 portrait;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header, footer, nav, canvas, .print\:hidden {
+    display: none !important;
+  }
+
+  .fixed.inset-0 {
+    position: relative !important;
+    background: transparent !important;
+    padding: 0 !important;
+    inset: auto !important;
+  }
+
+  .max-w-4xl {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+  }
+}
+
+

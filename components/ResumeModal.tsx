@@ -21,22 +21,39 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       <div className="relative w-full max-w-4xl bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto max-h-[92vh] overflow-y-auto print:max-h-none print:shadow-none print:p-0 print:m-0 font-sans">
         
         {/* Floating Action Controls (Hidden on print) */}
-        <div className="sticky top-0 right-0 z-20 flex items-center justify-end gap-2 pb-4 -mt-2 bg-white/90 backdrop-blur-sm print:hidden border-b border-slate-200 mb-6 font-mono">
-          <button
-            onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"
-          >
-            <Printer className="w-4 h-4" />
-            <span>Print / Save as PDF</span>
-          </button>
-          
-          <button
-            onClick={onClose}
-            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-colors"
-            aria-label="Close"
-          >
-            <X className="w-5 h-5" />
-          </button>
+        <div className="sticky top-0 right-0 z-20 flex items-center justify-between gap-2 pb-4 -mt-2 bg-white/90 backdrop-blur-sm print:hidden border-b border-slate-200 mb-6 font-mono text-xs">
+          <div className="flex items-center gap-1.5 text-slate-500 font-bold">
+            <Download className="w-4 h-4 text-sky-600" />
+            <span>ATS RESUME SHEET</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handlePrint}
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-all shadow-md shadow-sky-500/20 active:scale-95"
+              title="Save directly as PDF or Print"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download PDF</span>
+            </button>
+
+            <button
+              onClick={handlePrint}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold transition-colors"
+              title="Print Resume"
+            >
+              <Printer className="w-4 h-4" />
+              <span className="hidden sm:inline">Print</span>
+            </button>
+            
+            <button
+              onClick={onClose}
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Resume Content Sheet */}
