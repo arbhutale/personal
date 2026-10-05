@@ -54,6 +54,12 @@ pipeline {
                         SMTP_PORT="${env.SMTP_PORT}" \
                         CONTACT_RECEIVER_EMAIL="${env.CONTACT_RECEIVER_EMAIL}" \
                         -n ${env.NAMESPACE} || true
+                    
+                    # If Kubernetes Secret 'smtp-secret' exists, sync environment
+                    if kubectl get secret smtp-secret -n ${env.NAMESPACE} >/dev/null 2>&1; then
+                        echo "===> Syncing SMTP credentials from Kubernetes secret 'smtp-secret'..."
+                    fi
+
                     kubectl rollout restart deployment/${IMAGE_NAME} -n ${env.NAMESPACE} || true
                     kubectl rollout status deployment/${IMAGE_NAME} -n ${env.NAMESPACE} --timeout=120s
                 """
