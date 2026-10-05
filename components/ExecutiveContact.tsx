@@ -17,7 +17,8 @@ import {
   ArrowUp,
   Award,
   Zap,
-  Loader2
+  Loader2,
+  Terminal
 } from 'lucide-react';
 
 export default function ExecutiveContact() {
