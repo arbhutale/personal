@@ -95,7 +95,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Professional Summary */}
-          <div>
+          <div className="resume-section-block">
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-2">
               Professional Summary
             </h3>
@@ -105,7 +105,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Technical Skills */}
-          <div>
+          <div className="resume-section-block">
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-2">
               Technical Skills
             </h3>
@@ -134,13 +134,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Professional Experience */}
-          <div>
+          <div className="resume-section-block">
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-3">
               Professional Experience
             </h3>
             <div className="space-y-4">
               {EXPERIENCES.map((exp, idx) => (
-                <div key={idx} className="text-xs">
+                <div key={idx} className="text-xs resume-item-card">
                   <div className="flex items-center justify-between font-bold text-slate-900">
                     <span className="text-sm text-slate-950 font-black">{exp.company} — <span className="font-semibold text-slate-700">{exp.role}</span></span>
                     <span className="text-slate-600 font-mono text-[11px]">{exp.period} | {exp.location}</span>
@@ -156,13 +156,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Key Projects & Architectures */}
-          <div>
+          <div className="resume-section-block">
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-3">
               Key Production Projects & Architectures
             </h3>
             <div className="space-y-4 text-xs">
               {PROJECTS.map((proj, pIdx) => (
-                <div key={pIdx} className="space-y-1">
+                <div key={pIdx} className="space-y-1 resume-item-card">
                   <div className="font-bold text-slate-900 flex items-center justify-between">
                     <span className="text-xs sm:text-sm font-black text-slate-950">{proj.title}</span>
                     <span className="text-sky-800 font-mono text-[11px] font-bold">⚡ {proj.metrics}</span>
@@ -184,13 +184,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Education */}
-          <div>
+          <div className="resume-section-block">
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-2">
               Education
             </h3>
             <div className="space-y-2 text-xs">
               {EDUCATION.map((edu, eIdx) => (
-                <div key={eIdx} className="flex items-center justify-between">
+                <div key={eIdx} className="flex items-center justify-between resume-item-card">
                   <div>
                     <span className="font-bold text-slate-900">{edu.institution}</span> — <span>{edu.degree}</span>
                   </div>

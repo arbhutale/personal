@@ -276,6 +276,27 @@ html.dark .gradient-accent {
     color: #0f172a !important;
     overflow: visible !important;
   }
+
+  /* Page break controls to prevent orphan headings and awkward item breaks */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .resume-section-block {
+    break-inside: auto;
+  }
+
+  .resume-section-block > h2,
+  .resume-section-block > h3 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .resume-item-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
 }
 
 
