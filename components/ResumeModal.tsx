@@ -67,12 +67,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <span>•</span>
               <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:underline flex items-center gap-1">
                 <Linkedin className="w-3.5 h-3.5 text-sky-600" />
-                <span>linkedin.com/in/anil-kumar-bhutale</span>
+                <span>linkedin.com/in/arbhutale</span>
               </a>
               <span>•</span>
               <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:underline flex items-center gap-1">
                 <Github className="w-3.5 h-3.5 text-sky-600" />
-                <span>github.com/anilkumarbhutale</span>
+                <span>github.com/arbhutale</span>
               </a>
             </div>
           </div>
