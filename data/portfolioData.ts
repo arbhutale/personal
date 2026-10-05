@@ -46,9 +46,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/arbhutale/",
   github: "https://github.com/arbhutale",
   website: "https://ar.bhutale.in",
-  tagline: "Architecting Enterprise AI Agents, RAG Evaluation Pipelines & Multi-Cloud Solutions (AWS / Google Cloud)",
-  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of expertise building enterprise-scale platforms, AI-powered systems, and multi-cloud solutions using Python, FastAPI, React.js, Node.js, Google Cloud (Vertex AI, Gemini, Cloud Run), AWS, and Docker. Proven specialist in orchestrating multi-agent RAG pipelines, LangGraph workflows, AI agent evaluation (Ragas, TruLens, LangSmith), vector retrieval benchmarks, and automated CI/CD DevOps architectures.",
-};
+  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, AI-powered systems, and resilient multi-cloud architectures. Deep technical expertise in orchestrating multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Proven track record of designing modern React.js/Next.js interfaces, automating DevOps CI/CD pipelines (AWS, Docker, Jenkins), and driving engineering excellence across cross-functional teams.",
 
 export const EVAL_METRICS: EvalMetric[] = [
   {
