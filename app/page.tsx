@@ -9,18 +9,22 @@ import AgentEvalStudio from '../components/AgentEvalStudio';
 import SkillConstellation from '../components/SkillConstellation';
 import ExecutiveContact from '../components/ExecutiveContact';
 import ResumeModal from '../components/ResumeModal';
+import CyberCanvas from '../components/CyberCanvas';
 
 export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-dark-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:bg-indigo-400/20 dark:selection:text-indigo-300 relative transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-dark-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500/20 selection:text-cyan-400 relative transition-colors duration-300 overflow-x-hidden">
       
+      {/* Dynamic Cyber Ambient Particle Canvas */}
+      <CyberCanvas />
+
       {/* 1. Header Command Bar */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Main Experience Canvas */}
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         {/* 2. Hero Bento & Interactive Agent Sandbox */}
         <HeroBento onOpenResume={() => setIsResumeOpen(true)} />
 

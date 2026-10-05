@@ -14,7 +14,10 @@ import {
   Activity, 
   Layers,
   Sparkles,
-  Cloud
+  Cloud,
+  Check,
+  Radio,
+  Sliders
 } from 'lucide-react';
 
 interface EvalTest {
@@ -35,7 +38,7 @@ const EVAL_SUITES: EvalTest[] = [
     cloud: 'Google Cloud Vertex AI / AWS',
     status: 'passed',
     metrics: [
-      { label: 'Faithfulness', score: '98.4%', threshold: '> 95%' },
+      { label: 'Faithfulness Score', score: '98.4%', threshold: '> 95%' },
       { label: 'Answer Relevancy', score: '96.8%', threshold: '> 90%' },
       { label: 'Context Precision', score: '97.2%', threshold: '> 92%' },
       { label: 'Context Recall', score: '96.5%', threshold: '> 90%' }
@@ -76,7 +79,7 @@ const EVAL_SUITES: EvalTest[] = [
     cloud: 'Google Cloud Platform (GCP)',
     status: 'passed',
     metrics: [
-      { label: 'Token Latency (Time-to-First-Token)', score: '185ms', threshold: '< 300ms' },
+      { label: 'Token Latency (TTFT)', score: '185ms', threshold: '< 300ms' },
       { label: 'Vertex AI Vector Latency', score: '12ms', threshold: '< 25ms' },
       { label: 'Context Cache Hit Ratio', score: '88.5%', threshold: '> 75%' },
       { label: 'Throughput (Concurrency)', score: '500 req/s', threshold: '> 250 req/s' }
@@ -103,176 +106,158 @@ export default function AgentEvalStudio() {
     setIsRunningEval(true);
     setEvalProgress(0);
 
-    const timer1 = setTimeout(() => setEvalProgress(35), 300);
-    const timer2 = setTimeout(() => setEvalProgress(70), 700);
-    const timer3 = setTimeout(() => {
+    setTimeout(() => setEvalProgress(35), 300);
+    setTimeout(() => setEvalProgress(70), 700);
+    setTimeout(() => {
       setEvalProgress(100);
       setIsRunningEval(false);
     }, 1200);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-    };
   };
 
   return (
-    <section id="eval-studio" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="eval-studio" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
       
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 pb-6 border-b border-slate-200/80 dark:border-white/10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 pb-6 border-b border-slate-200/80 dark:border-white/10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-400 text-xs font-mono font-semibold mb-2">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-semibold mb-2">
+            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
             <span>AI AGENT TESTING, RAG EVALUATION & BENCHMARKING</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
             AI Agent & RAG Evaluation Studio
           </h2>
         </div>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md font-mono">
-          Rigorous testing frameworks ensuring deterministic agent execution, zero hallucination, and sub-200ms latency across Google Cloud (Vertex AI) & AWS.
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-md font-mono">
+          Continuous evaluation testing suites ensuring zero hallucination, deterministic multi-agent tool execution, and sub-200ms latency across GCP & AWS.
         </p>
       </div>
 
-      {/* Top 5 Key Metric Cards */}
+      {/* Top 5 Metric Telemetry Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
         {EVAL_METRICS.map((metric, i) => (
-          <div key={i} className="bento-card p-4 flex flex-col justify-between">
+          <div key={i} className="bento-card p-4 flex flex-col justify-between border-cyan-500/20 hover:border-cyan-500/40 transition-all">
             <div>
-              <div className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400 uppercase font-semibold">
+              <div className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
                 {metric.category}
               </div>
-              <div className="text-2xl font-black font-display text-slate-900 dark:text-white mt-1">
+              <div className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
                 {metric.score}
               </div>
               <div className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5 leading-snug">
                 {metric.name}
               </div>
             </div>
-            <div className="mt-3 pt-2 border-t border-slate-100 dark:border-white/5 text-[10px] font-mono text-slate-400">
-              {metric.benchmark}
+            <div className="mt-3 pt-2 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-500">
+              <span>{metric.benchmark}</span>
+              <span className="text-emerald-500 font-bold">✓ PASS</span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Interactive Eval Test Bench */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        
-        {/* Left Column: Test Suite Selector */}
-        <div className="lg:col-span-4 space-y-3">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1 flex items-center justify-between">
-            <span>Select Evaluation Suite</span>
-            <span className="text-[10px] text-indigo-600 dark:text-indigo-400">3 SUITES</span>
+      {/* Main Studio Interactive Console */}
+      <div className="bento-card p-6 sm:p-8 border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Suite Selectors (5 Cols) */}
+          <div className="lg:col-span-5 space-y-3">
+            <h3 className="text-sm font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <Sliders className="w-4 h-4" />
+              <span>AVAILABLE EVALUATION SUITES</span>
+            </h3>
+
+            {EVAL_SUITES.map((suite, idx) => {
+              const isActive = activeSuiteIdx === idx;
+              return (
+                <div
+                  key={suite.id}
+                  onClick={() => handleRunEval(idx)}
+                  className={`p-4 rounded-2xl cursor-pointer transition-all border font-mono text-xs ${
+                    isActive
+                      ? 'bg-slate-900 text-white dark:bg-dark-900 border-cyan-500/50 shadow-md shadow-cyan-500/10'
+                      : 'bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-cyan-500/30'
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="font-bold text-slate-900 dark:text-white font-sans text-sm">{suite.name}</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
+                      PASSED
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-slate-500 dark:text-slate-400 mb-2">
+                    Framework: <strong className="text-cyan-400">{suite.framework}</strong>
+                  </div>
+                  <div className="text-[10px] text-slate-400 flex items-center justify-between">
+                    <span>Cloud: {suite.cloud}</span>
+                    <span className="text-purple-400 font-bold">Run Test &gt;</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {EVAL_SUITES.map((suite, idx) => {
-            const isSelected = activeSuiteIdx === idx;
-            return (
-              <button
-                key={suite.id}
-                onClick={() => handleRunEval(idx)}
-                className={`w-full text-left p-4 rounded-2xl transition-all border flex flex-col gap-2 ${
-                  isSelected
-                    ? 'bento-card border-indigo-500/60 dark:border-indigo-400/60 shadow-md ring-1 ring-indigo-500/20'
-                    : 'bg-white/70 dark:bg-dark-900/60 border-slate-200/80 dark:border-white/5 hover:bg-white dark:hover:bg-dark-850'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold text-indigo-600 dark:text-indigo-400 uppercase">
-                    {suite.framework}
-                  </span>
-                  <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>PASSED</span>
-                  </span>
-                </div>
-
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">
-                  {suite.name}
-                </h3>
-
-                <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                  <Cloud className="w-3 h-3 text-sky-500" />
-                  <span>{suite.cloud}</span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Right Column: Live Test Bench & Assertion Console */}
-        <div className="lg:col-span-8 bento-card p-6 sm:p-7 flex flex-col justify-between">
-          <div>
+          {/* Right Column: Execution Output & Trace Telemetry (7 Cols) */}
+          <div className="lg:col-span-7 bg-slate-950 rounded-3xl p-6 border border-slate-800 font-mono text-xs text-slate-100 shadow-2xl">
             
             {/* Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-200/80 dark:border-white/10">
-              <div>
-                <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 uppercase">
-                  {currentSuite.framework}
-                </span>
-                <h3 className="text-xl font-display font-extrabold text-slate-900 dark:text-white">
-                  {currentSuite.name}
-                </h3>
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+              <div className="flex items-center gap-2">
+                <Terminal className="w-4 h-4 text-cyan-400" />
+                <span className="font-bold text-slate-200">{currentSuite.name}</span>
               </div>
-
               <button
                 onClick={() => handleRunEval(activeSuiteIdx)}
                 disabled={isRunningEval}
-                className="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-xs font-bold transition-all disabled:opacity-50 flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-1 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-[11px] transition-all flex items-center gap-1.5 disabled:opacity-50"
               >
-                <Play className="w-3 h-3 fill-current" />
-                <span>{isRunningEval ? 'Executing Eval...' : 'Re-run Benchmark'}</span>
+                <RefreshCw className={`w-3.5 h-3.5 ${isRunningEval ? 'animate-spin' : ''}`} />
+                <span>{isRunningEval ? 'Executing...' : 'Re-Run Test'}</span>
               </button>
             </div>
 
             {/* Metrics Breakdown Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-              {currentSuite.metrics.map((m, mIdx) => (
-                <div key={mIdx} className="p-3 rounded-2xl bg-slate-50 dark:bg-dark-850 border border-slate-200/70 dark:border-white/5">
-                  <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400">{m.label}</div>
-                  <div className="text-xl font-black font-display text-slate-900 dark:text-white mt-0.5">{m.score}</div>
-                  <div className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
-                    Threshold: {m.threshold} ✓
-                  </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+              {currentSuite.metrics.map((m) => (
+                <div key={m.label} className="bg-slate-900/90 rounded-xl p-3 border border-slate-800 text-center">
+                  <span className="text-[10px] text-slate-500 block">{m.label}</span>
+                  <span className="text-base font-extrabold text-cyan-300 block my-0.5">{m.score}</span>
+                  <span className="text-[9px] text-emerald-400 block font-bold">Target: {m.threshold}</span>
                 </div>
               ))}
             </div>
 
-            {/* Live Trace Terminal Log */}
-            <div className="rounded-2xl bg-slate-900 dark:bg-dark-950 p-4 font-mono text-xs text-slate-300 border border-slate-800 dark:border-white/10 space-y-1.5 shadow-inner">
-              <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-slate-500 text-[11px]">
-                <span className="flex items-center gap-1.5 text-slate-400">
-                  <Terminal className="w-3.5 h-3.5 text-indigo-400" />
-                  eval_assertion_runner.py
-                </span>
-                <span className="text-emerald-400">STATUS: 100% VERIFIED</span>
+            {/* Live Progress Bar */}
+            <div className="mb-4">
+              <div className="flex justify-between text-[10px] text-slate-400 mb-1">
+                <span>EVALUATION SUITE PROGRESS</span>
+                <span className="text-cyan-400 font-bold">{evalProgress}%</span>
               </div>
+              <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-all duration-300"
+                  style={{ width: `${evalProgress}%` }}
+                />
+              </div>
+            </div>
 
-              {isRunningEval ? (
-                <div className="py-6 flex flex-col items-center justify-center gap-2 text-indigo-400">
-                  <div className="w-5 h-5 border-2 border-indigo-400 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-xs font-mono animate-pulse">Running test assertions & LLM-as-a-Judge evaluations...</p>
+            {/* Trace Logs Box */}
+            <div className="bg-slate-900 rounded-2xl p-4 border border-slate-800 space-y-2 min-h-[160px]">
+              <div className="text-slate-500 text-[10px] font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                <span>EXECUTION TRACE LOGS</span>
+              </div>
+              {currentSuite.traceLog.map((log, i) => (
+                <div key={i} className="text-[11px] leading-relaxed text-slate-300 flex items-start gap-2">
+                  <span className="text-cyan-500 font-bold">&gt;</span>
+                  <span>{log}</span>
                 </div>
-              ) : (
-                currentSuite.traceLog.map((line, lIdx) => (
-                  <p key={lIdx} className={line.includes('PASSED') ? 'text-emerald-400 font-bold' : 'text-slate-300'}>
-                    {line}
-                  </p>
-                ))
-              )}
+              ))}
             </div>
 
           </div>
 
-          <div className="pt-3 mt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
-            <span>Continuous Regression Testing</span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Zero Hallucination Guaranteed</span>
-          </div>
         </div>
-
       </div>
 
     </section>
