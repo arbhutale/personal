@@ -47,6 +47,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/arbhutale",
   website: "https://ar.bhutale.in",
   bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, AI-powered systems, and resilient multi-cloud architectures. Deep technical expertise in orchestrating multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Proven track record of designing modern React.js/Next.js interfaces, automating DevOps CI/CD pipelines (AWS, Docker, Jenkins), and driving engineering excellence across cross-functional teams.",
+};
 
 export const EVAL_METRICS: EvalMetric[] = [
   {
