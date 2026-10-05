@@ -41,6 +41,11 @@ export default function ExecutiveContact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
+    
+    // Automatically trigger mailto link to direct the inquiry to your inbox
+    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setFormSubmitted(false);
