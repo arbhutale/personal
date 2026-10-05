@@ -157,23 +157,45 @@ export const PROJECTS: Project[] = [
     id: "enterprise-rag-eval-assistant",
     title: "Enterprise AI Knowledge Assistant & Evaluation Suite",
     category: "Generative AI, Agentic RAG & Eval",
-    description: "Enterprise multi-agent RAG platform featuring automated multi-format document ingestion (PDF, DOCX, Excel), hybrid semantic retrieval, and a continuous automated evaluation pipeline tracking faithfulness, context precision, and hallucination scores.",
+    description: "Enterprise multi-agent RAG platform featuring automated multi-format document ingestion (PDF, DOCX, Excel), hybrid semantic retrieval (BM25 + Dense Vectors), and a continuous automated evaluation pipeline tracking faithfulness, context precision, and hallucination scores.",
     architectureDetails: [
-      "Multi-Agent RAG pipeline orchestrated via LangChain & LangGraph with autonomous query rewriting and routing.",
-      "Continuous automated RAG evaluation test bench utilizing Ragas, TruLens, and DeepEval measuring context recall and answer relevance.",
-      "Multi-Cloud foundation supporting Google Cloud Vertex AI (Gemini 1.5 Pro), Azure OpenAI, and local FAISS/ChromaDB vector indices.",
-      "Containerized microservices backend on FastAPI, deployed on scalable Google Cloud Run and AWS ECS."
+      "Multi-Agent RAG pipeline orchestrated via LangChain & LangGraph with autonomous query rewriting, document chunk decomposition, and fallback routing.",
+      "Continuous automated RAG evaluation test bench utilizing Ragas, TruLens, and DeepEval measuring context recall, context precision, and answer relevancy.",
+      "Multi-Cloud foundation supporting Google Cloud Vertex AI (Gemini 1.5 Pro / Flash), Azure OpenAI, and local FAISS/ChromaDB vector indices.",
+      "Asynchronous FastAPI backend with SSE streaming, containerized using Docker and deployed on Google Cloud Run & AWS ECS."
     ],
     technologies: ["Python", "FastAPI", "LangChain", "LangGraph", "Google Cloud (Vertex AI, Gemini)", "Ragas", "TruLens", "ChromaDB", "FAISS", "React", "AWS", "Docker"],
     metrics: "98.4% Ragas Faithfulness Score with sub-second retrieval across 50,000+ enterprise docs",
     badge: "Flagship GenAI & Eval",
     accentColor: "#6366f1",
     flowSteps: [
-      { step: "1. Multi-Format Ingestion", detail: "PDF / DOCX / Excel parsing & metadata extraction" },
+      { step: "1. Multi-Format Ingestion", detail: "PDF / DOCX / Excel parsing & chunk metadata extraction" },
       { step: "2. Hybrid Embedding & Indexing", detail: "Vertex AI & OpenAI embeddings + ChromaDB/FAISS vector stores" },
       { step: "3. LangGraph Agent Supervisor", detail: "Supervisor agent decomposes query and delegates to specialized tools" },
       { step: "4. Automated Eval & Guardrails", detail: "Ragas / DeepEval validation for faithfulness and red-teaming checks" },
       { step: "5. Streamed Grounded Response", detail: "Context-grounded citations streamed to React UI" }
+    ]
+  },
+  {
+    id: "smartseth-observability-hub",
+    title: "SmartSeth Multi-Cloud Observability & Automated SSL Hub",
+    category: "Observability, Kubernetes & SSL Security",
+    description: "Centralized cluster observability dashboard and automated Let's Encrypt certificate manager providing real-time in-cluster Kubernetes pod log streaming, reverse-proxy ingress routing, and multi-namespace TLS secret synchronization.",
+    architectureDetails: [
+      "In-cluster pod telemetry & live log streaming engine executing real-time `kubectl` log tails across dev, prod, shared, and personal namespaces.",
+      "Automated Let's Encrypt SSL manager utilizing Certbot HTTP-01 challenge verification and automated k8s secret syncing (`tls-certs-dev`, `tls-certs-prod`).",
+      "Dynamic environment switcher supporting touchscreen swipe gestures, active tab centering, and reverse-proxy Nginx gateway routing.",
+      "Microservices architecture containerized with Docker, deployed on k3s / Kubernetes cluster with 99.99% uptime."
+    ],
+    technologies: ["Node.js", "Express", "Kubernetes (k3s)", "Certbot", "Nginx", "Docker", "Tailwind CSS", "JavaScript (ES6+)", "Let's Encrypt"],
+    metrics: "Automated SSL renewal across 10+ subdomains with real-time log streaming for 50+ pods",
+    badge: "K8s & Observability",
+    accentColor: "#0ea5e9",
+    flowSteps: [
+      { step: "1. ACME Challenge Trigger", detail: "Certbot HTTP-01 challenge routing via Nginx ingress" },
+      { step: "2. Certificate Issuance", detail: "Obtains 90-day Let's Encrypt SAN certificate" },
+      { step: "3. K8s Secret Sync", detail: "Syncs TLS certs to Kubernetes secrets across namespaces" },
+      { step: "4. Telemetry Stream", detail: "WebSocket / SSE pod log tailing & cluster status dashboard" }
     ]
   },
   {
@@ -197,6 +219,28 @@ export const PROJECTS: Project[] = [
       { step: "3. Risk Assessment Agent", detail: "Evaluates failure probability & rollback complexity" },
       { step: "4. LangSmith Eval Verification", detail: "Regression testing against historic change database" },
       { step: "5. Report Generation", detail: "Generates actionable executive summary & risk matrix" }
+    ]
+  },
+  {
+    id: "genai-red-teaming-engine",
+    title: "Generative AI Guardrails & Red-Teaming Engine",
+    category: "AI Safety, Guardrails & Evaluation",
+    description: "Enterprise AI safety testbed designed to evaluate LLM vulnerabilities against prompt injection, jailbreak attempts, PII leakage, and toxic outputs using NeMo Guardrails and Llama-Guard evaluation benchmarks.",
+    architectureDetails: [
+      "Automated red-teaming test harness generating 1,000+ synthetic attack prompts targeting RAG system boundaries.",
+      "Multi-layer guardrail pipeline enforcing input sanitization, context verification, and output filtering.",
+      "Integration with TruLens and DeepEval for automated safety benchmark scoring and policy enforcement.",
+      "Custom analytics dashboard tracking attack detection rates and latency overhead per guardrail check."
+    ],
+    technologies: ["Python", "FastAPI", "NeMo Guardrails", "Llama-Guard", "TruLens", "DeepEval", "OpenAI", "Google Cloud Vertex AI", "React"],
+    metrics: "99.8% defense rate against prompt injection attacks with under 20ms evaluation latency",
+    badge: "AI Safety & Guardrails",
+    accentColor: "#ef4444",
+    flowSteps: [
+      { step: "1. Attack Prompt Synthesis", detail: "Generates adversarial prompts targeting system boundaries" },
+      { step: "2. NeMo Guardrail Filter", detail: "Scans input for jailbreak patterns and PII leakage" },
+      { step: "3. Contextual Verification", detail: "Llama-Guard validation against safety policy rules" },
+      { step: "4. Benchmark Telemetry", detail: "Logs attack prevention metrics to evaluation database" }
     ]
   },
   {

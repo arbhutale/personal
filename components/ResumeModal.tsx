@@ -138,23 +138,29 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
           </div>
 
-          {/* Key Projects */}
+          {/* Key Projects & Architectures */}
           <div>
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-3">
-              Key Projects
+              Key Production Projects & Architectures
             </h3>
-            <div className="space-y-3.5 text-xs">
+            <div className="space-y-4 text-xs">
               {PROJECTS.map((proj, pIdx) => (
-                <div key={pIdx}>
+                <div key={pIdx} className="space-y-1">
                   <div className="font-bold text-slate-900 flex items-center justify-between">
                     <span className="text-xs sm:text-sm font-black text-slate-950">{proj.title}</span>
+                    <span className="text-sky-800 font-mono text-[11px] font-bold">⚡ {proj.metrics}</span>
                   </div>
-                  <div className="text-[11px] text-slate-600 font-mono italic mb-1">
-                    Technologies: {proj.technologies.join(', ')}
+                  <div className="text-[11px] text-slate-600 font-mono italic">
+                    Tech Stack: {proj.technologies.join(', ')}
                   </div>
-                  <p className="text-slate-700 leading-relaxed">
-                    • {proj.description}
+                  <p className="text-slate-700 leading-relaxed font-medium">
+                    {proj.description}
                   </p>
+                  <ul className="list-disc list-outside pl-4 space-y-0.5 text-[11px] text-slate-700 leading-normal">
+                    {proj.architectureDetails.map((detail, dIdx) => (
+                      <li key={dIdx}>{detail}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
