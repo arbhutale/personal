@@ -8,6 +8,8 @@ pipeline {
             choices: ['personal', 'dev', 'prod'],
             description: 'Target Environment'
         )
+        string(name: 'SMTP_USER', defaultValue: 'anil-kumar.bhutale@outlook.com', description: 'SMTP Username/Email')
+        password(name: 'SMTP_PASS', defaultValue: '', description: 'SMTP / Outlook App Password (leave blank if using k8s secret)')
     }
 
     environment {
@@ -49,11 +51,21 @@ pipeline {
                 echo "===> Deploying to Kubernetes namespace ${env.NAMESPACE}..."
                 sh """
                     kubectl apply -f k8s/deployment.yaml
+                    
+                    # Set base SMTP variables
                     kubectl set env deployment/${IMAGE_NAME} \
                         SMTP_HOST="${env.SMTP_HOST}" \
                         SMTP_PORT="${env.SMTP_PORT}" \
                         CONTACT_RECEIVER_EMAIL="${env.CONTACT_RECEIVER_EMAIL}" \
+                        SMTP_USER="${params.SMTP_USER}" \
                         -n ${env.NAMESPACE} || true
+
+                    # Inject SMTP password if provided in build parameters
+                    if [ -n "${params.SMTP_PASS}" ]; then
+                        kubectl set env deployment/${IMAGE_NAME} \
+                            SMTP_PASS="${params.SMTP_PASS}" \
+                            -n ${env.NAMESPACE} || true
+                    fi
                     
                     # If Kubernetes Secret 'smtp-secret' exists, sync environment
                     if kubectl get secret smtp-secret -n ${env.NAMESPACE} >/dev/null 2>&1; then
