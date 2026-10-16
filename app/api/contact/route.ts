@@ -12,6 +12,17 @@ export async function POST(req: Request) {
       );
     }
 
+    const timestamp = new Date().toISOString();
+
+    // Log the received email message clearly in container logs
+    console.log('\n================== [PORTFOLIO INCOMING MESSAGE] ==================');
+    console.log(`Timestamp: ${timestamp}`);
+    console.log(`From:      ${name} <${email}>`);
+    console.log(`Subject:   ${subject}`);
+    console.log(`Message:`);
+    console.log(message);
+    console.log('==================================================================\n');
+
     const host = process.env.SMTP_HOST;
     const port = parseInt(process.env.SMTP_PORT || '587', 10);
     const user = process.env.SMTP_USER;
@@ -53,9 +64,10 @@ export async function POST(req: Request) {
       };
 
       await transporter.sendMail(mailOptions);
+      console.log(`[SMTP Success] Email routed to: ${receiver}`);
       return NextResponse.json({ success: true, message: 'Inquiry dispatched via SMTP successfully.' });
     } else {
-      console.log(`[SMTP Notice] Inquiry from ${name} (${email}): "${subject}". (SMTP env variables not populated; set SMTP_HOST, SMTP_USER, SMTP_PASS in deployment environment).`);
+      console.log(`[SMTP Notice] Email captured in logs above. Note: SMTP env variables (SMTP_HOST, SMTP_USER, SMTP_PASS) not populated; direct mail server relay bypassed.`);
       return NextResponse.json({
         success: true,
         notice: 'Inquiry received. Note: Populate SMTP_HOST, SMTP_USER, SMTP_PASS env variables for direct email routing.',
