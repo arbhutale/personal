@@ -5,7 +5,7 @@ import { ThemeProvider } from '../context/ThemeContext';
 
 export const metadata: Metadata = {
   title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
-  description: `${PERSONAL_INFO.name} - Senior Full Stack & Generative AI Engineer with 8+ years experience in LangChain, LangGraph, RAG, Python, FastAPI, React, and AWS cloud solutions.`,
+  description: `${PERSONAL_INFO.name} - Senior Full Stack & Generative AI Engineer with ${PERSONAL_INFO.experienceYears} years experience in LangChain, LangGraph, RAG, Python, FastAPI, React, and AWS cloud solutions.`,
   keywords: [
     'B. Anil Kumar',
     'Generative AI Engineer',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: PERSONAL_INFO.name, url: PERSONAL_INFO.linkedin }],
   openGraph: {
     title: `${PERSONAL_INFO.name} — Senior Full Stack & Generative AI Engineer`,
-    description: 'Explore the portfolio of B. Anil Kumar: 8+ Years building Enterprise AI Systems, Multi-Agent RAG Architectures, and Scalable Cloud Microservices.',
+    description: `Explore the portfolio of B. Anil Kumar: ${PERSONAL_INFO.experienceYears} Years building Enterprise AI Systems, Multi-Agent RAG Architectures, and Scalable Cloud Microservices.`,
     type: 'website',
     locale: 'en_US',
     siteName: `${PERSONAL_INFO.name} Portfolio`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
-    description: 'Enterprise AI & Full Stack Engineer with 8+ years experience.',
+    description: `Enterprise AI & Full Stack Engineer with ${PERSONAL_INFO.experienceYears} years experience.`,
   },
 };
 

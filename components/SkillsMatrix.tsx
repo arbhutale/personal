@@ -47,7 +47,7 @@ export default function SkillsMatrix() {
             Comprehensive <span className="text-gradient-cyan">Skill Matrix</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
-            A verified 8+ year toolkit spanning Agentic AI architectures, scalable Python/Node backends, modern React web applications, and enterprise cloud DevOps.
+            A verified 9+ year toolkit spanning Agentic AI architectures, scalable Python/Node backends, modern React web applications, and enterprise cloud DevOps.
           </p>
 
           {/* Filter Tabs */}

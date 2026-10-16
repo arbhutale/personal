@@ -26,7 +26,7 @@ export default function ProjectShowcaseBento() {
   const [activeDocType, setActiveDocType] = useState<'pdf' | 'docx' | 'xlsx'>('pdf');
   const [simulatingPipeline, setSimulatingPipeline] = useState(false);
   const [pipelineProgress, setPipelineProgress] = useState(4);
-  const [activeFilter, setActiveFilter] = useState<'all' | 'genai' | 'devops'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'banking' | 'genai' | 'devops'>('all');
 
   const docSnippets = {
     pdf: { name: 'Q4_Enterprise_Architecture.pdf', chunks: '1,420 chunks', confidence: '99.4%', vectors: 'Vertex AI & OpenAI embeddings' },
@@ -47,8 +47,9 @@ export default function ProjectShowcaseBento() {
   };
 
   const filteredProjects = PROJECTS.filter((p) => {
+    if (activeFilter === 'banking') return p.category.includes('Banking') || p.category.includes('FinTech');
     if (activeFilter === 'genai') return p.category.includes('Generative AI') || p.category.includes('Agent');
-    if (activeFilter === 'devops') return p.category.includes('DevOps') || p.category.includes('Cloud');
+    if (activeFilter === 'devops') return p.category.includes('DevOps') || p.category.includes('Cloud') || p.category.includes('Observability');
     return true;
   });
 
@@ -80,6 +81,16 @@ export default function ProjectShowcaseBento() {
             ALL ARCHITECTURES
           </button>
           <button
+            onClick={() => setActiveFilter('banking')}
+            className={`px-3 py-1.5 rounded-lg transition-all font-bold ${
+              activeFilter === 'banking'
+                ? 'bg-slate-900 text-white dark:bg-cyan-500 dark:text-slate-950 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            CORE BANKING
+          </button>
+          <button
             onClick={() => setActiveFilter('genai')}
             className={`px-3 py-1.5 rounded-lg transition-all font-bold ${
               activeFilter === 'genai'
@@ -103,6 +114,7 @@ export default function ProjectShowcaseBento() {
       </div>
 
       {/* Hero Showcase Project: Enterprise AI Knowledge Assistant */}
+      {(activeFilter === 'all' || activeFilter === 'genai') && (
       <div className="bento-card p-6 sm:p-9 mb-8 relative overflow-hidden border-cyan-500/20 hover:border-cyan-500/50 transition-all">
         
         {/* Glow background */}
@@ -249,10 +261,14 @@ export default function ProjectShowcaseBento() {
 
         </div>
       </div>
+      )}
 
       {/* Grid of Other Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredProjects.slice(1).map((project) => (
+        {(activeFilter === 'all' || activeFilter === 'genai'
+          ? filteredProjects.filter((p) => p.id !== 'enterprise-rag-eval-assistant')
+          : filteredProjects
+        ).map((project) => (
           <div
             key={project.id}
             className="bento-card p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group hover:border-purple-500/50 transition-all"

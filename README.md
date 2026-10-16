@@ -6,7 +6,7 @@ A state-of-the-art, responsive personal portfolio website optimized for Desktop,
 
 ## ✨ Key Highlights & Features
 
-1. **Hero Section with Dynamic Roles**: Highlighting 8+ years of enterprise experience, Multi-Agent RAG architecture, FastAPI, Python, React, and AWS cloud native platforms.
+1. **Hero Section with Dynamic Roles**: Highlighting 9+ years of enterprise experience, Multi-Agent RAG architecture, FastAPI, Python, React, and AWS cloud native platforms.
 2. **Interactive AI Agent & RAG Simulator**: Live interactive playground that simulates LangGraph multi-agent traversal, vector embedding lookup (FAISS / ChromaDB), and context-grounded answer synthesis.
 3. **Professional Work Experience**: Interactive career timeline featuring Lloyds Technology Centre, Infosys, Truelancer, and Qualcomm India with measurable production impacts and tech stacks.
 4. **Key Projects Showcase**: Deep-dive architecture cards for *Enterprise AI Knowledge Assistant*, *AI Release Impact Analysis Platform*, and *Enterprise Release Automation Platform*.

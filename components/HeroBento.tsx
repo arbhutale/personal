@@ -49,11 +49,12 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
   const [simulating, setSimulating] = useState(false);
   const [activePromptTab, setActivePromptTab] = useState<'rag' | 'stack' | 'exp'>('rag');
   const [streamedText, setStreamedText] = useState(
-    "Anil is a Lead / Senior Full Stack & Generative AI Engineer with 9+ years experience specializing in LangGraph multi-agent systems, RAG & Ragas evaluation, Google Cloud (Vertex AI), and AWS cloud microservices."
+    "Anil is a Lead / Senior Full Stack & Generative AI Engineer with 9+ years experience specializing in Core Banking applications, GitHub Copilot-accelerated feature engineering, LangGraph multi-agent systems, RAG evaluation, and low-latency performance optimization."
   );
 
   const titles = [
     "Senior Generative AI & Agent Architect",
+    "Core Banking & Full Stack Lead",
     "RAG & Agent Testing / Evaluation Specialist",
     "Google Cloud & AWS Cloud Architect",
     "Senior Full Stack Engineer (Python & React)"
@@ -81,9 +82,9 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
     if (queryType === 'rag') {
       response = "RAG & Evaluation Pipeline: Cosine similarity 0.992 on FAISS/ChromaDB. Ragas test suite reports 98.4% faithfulness and 97.2% context precision. Validated against Google Cloud Vertex AI & Gemini 1.5 Pro.";
     } else if (queryType === 'stack') {
-      response = "Multi-Cloud Tech Stack: Google Cloud (Vertex AI, Gemini, Cloud Run, GKE), AWS (EC2, S3, Lambda, ECS), Python (FastAPI, LangGraph, Ragas, TruLens), React.js, Next.js, TypeScript, Docker, and CI/CD Pipelines.";
+      response = "Multi-Cloud & AI Tech Stack: GitHub Copilot, Core Banking Architecture, Google Cloud (Vertex AI, Gemini, Cloud Run), AWS (EC2, S3, Lambda, ECS), Python (FastAPI, LangGraph, Ragas, TruLens), React.js, Next.js, Redis, Docker, and CI/CD Pipelines.";
     } else {
-      response = "Career Dossier: Senior Software Engineer at Lloyds Technology Centre (2026-Present), Senior Consultant at Infosys (2023-2026), Consultant at Truelancer (2022-2023), Programmer Analyst at Qualcomm India (2018-2022).";
+      response = "Career Dossier: Senior Software Engineer at Lloyds Technology Centre (2026-Present) driving Core Banking applications, Copilot-accelerated feature delivery & performance tuning; Senior Consultant at Infosys (2023-2026); Consultant at Truelancer (2022-2023); Programmer Analyst at Qualcomm India (2018-2022); Web Developer at ZMOT (2017-2018).";
     }
 
     let i = 0;

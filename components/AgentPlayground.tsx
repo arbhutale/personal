@@ -40,7 +40,7 @@ const PRESETS: QAPreset[] = [
         text: "Built stateful multi-agent systems for RFC impact analysis, automated document ingestion (PDF, DOCX, Excel), and semantic contextual retrieval on AWS."
       }
     ],
-    answer: "Anil is a Senior Full Stack & Generative AI Engineer with 8+ years of industry experience. At Lloyds Technology Centre and Infosys, he architects enterprise-scale Generative AI platforms utilizing LangChain and LangGraph for multi-agent autonomous workflows. His expertise spans automated multi-format RAG ingestion pipelines, vector databases (FAISS, ChromaDB, Pinecone), semantic search optimization, and production deployment using FastAPI, Docker, and AWS."
+    answer: "Anil is a Lead / Senior Full Stack & Generative AI Engineer with 9+ years of industry experience. At Lloyds Technology Centre and Infosys, he architects enterprise Core Banking platforms and Generative AI systems utilizing GitHub Copilot, LangChain, and LangGraph for high-performance multi-agent autonomous workflows. His expertise spans automated RAG evaluation, vector databases (FAISS, ChromaDB), and low-latency microservices deployment using FastAPI, Docker, and AWS."
   },
   {
     query: "Explain the architecture of Anil's Enterprise AI Knowledge Assistant project.",
@@ -80,7 +80,7 @@ const PRESETS: QAPreset[] = [
     query: "Where has Anil worked and what were his key achievements?",
     category: "Career History",
     agentChain: [
-      "SupervisorAgent: Querying career timeline spanning 8+ years",
+      "SupervisorAgent: Querying career timeline spanning 9+ years",
       "ExperienceIndex: Aggregating Lloyds, Infosys, Truelancer, Qualcomm India",
       "SynthesisAgent: Compiling chronological career achievements"
     ],
@@ -88,10 +88,10 @@ const PRESETS: QAPreset[] = [
       {
         title: "Professional Work History",
         score: "0.995",
-        text: "Lloyds Technology Centre (Senior Software Engineer, 2026-Pres), Infosys (Senior Consultant, 2023-2026), Truelancer (Consultant, 2022-2023), Qualcomm India (Programmer Analyst, 2018-2022)."
+        text: "Lloyds Technology Centre (Senior Software Engineer, 2026-Pres), Infosys (Senior Consultant, 2023-2026), Truelancer (Consultant, 2022-2023), Qualcomm India (Programmer Analyst, 2018-2022), ZMOT (Web Developer, 2017-2018)."
       }
     ],
-    answer: "Anil's career encompasses 8+ years of enterprise engineering: 1) Lloyds Technology Centre (Senior Software Engineer): Leading GenAI solutions, multi-agent workflows, and AWS microservices; 2) Infosys (Senior Consultant): Architected enterprise platforms with React, FastAPI, Azure OpenAI, and slashed deployment times via CI/CD; 3) Truelancer (Consultant): Delivered full-stack AI document processing applications; 4) Qualcomm India (Programmer Analyst): Built engineering analytics dashboards with React/Django and automated Docker CI/CD pipelines."
+    answer: "Anil's career encompasses 9+ years of enterprise engineering: 1) Lloyds Technology Centre (Senior Software Engineer): Leading Core Banking platforms, Copilot-accelerated feature engineering, performance optimization, and AWS microservices; 2) Infosys (Senior Consultant): Architected banking platforms with React, FastAPI, Azure OpenAI, and slashed deployment times via CI/CD; 3) Truelancer (Consultant): Delivered full-stack AI document processing applications; 4) Qualcomm India (Programmer Analyst): Built engineering analytics dashboards with React/Django and automated Docker CI/CD pipelines; 5) ZMOT (Web Developer): Engineered responsive web applications and interactive client portals."
   }
 ];
 

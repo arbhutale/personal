@@ -46,7 +46,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/arbhutale/",
   github: "https://github.com/arbhutale",
   website: "https://ar.bhutale.in",
-  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, AI-powered systems, and resilient multi-cloud architectures. Deep technical expertise in orchestrating multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Proven track record of designing modern React.js/Next.js interfaces, automating DevOps CI/CD pipelines (AWS, Docker, Jenkins), and driving engineering excellence across cross-functional teams.",
+  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, high-throughput Core Banking applications, and resilient multi-cloud architectures. Deep technical expertise in orchestrating multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Champion of AI-augmented engineering using GitHub Copilot for rapid feature delivery, code quality, and aggressive performance optimization across distributed financial systems.",
 };
 
 export const EVAL_METRICS: EvalMetric[] = [
@@ -96,30 +96,33 @@ export const EXPERIENCES: Experience[] = [
     type: "Full-time",
     color: "from-emerald-500 to-teal-600",
     highlights: [
-      "Design and engineer scalable enterprise applications utilizing React, Python, FastAPI, Google Cloud (Vertex AI), and AWS cloud infrastructure.",
+      "Architect, develop, and deliver high-availability Core Banking applications, spearheading end-to-end rollout of mission-critical features and secure transactional workflows.",
+      "Pioneer AI-assisted engineering with GitHub Copilot across daily workflows, accelerating feature delivery, automated test case synthesis, and boilerplate modernization by 35%+.",
+      "Spearhead system-wide performance optimization across core banking microservices—refactoring database queries, fine-tuning indexing, and integrating Redis caching to slash API latencies by 42% under high concurrency.",
+      "Design and engineer scalable enterprise full-stack solutions utilizing React, Python, FastAPI, Google Cloud (Vertex AI), and AWS cloud infrastructure.",
       "Build production-grade Generative AI solutions, AI Agents, and multi-agent workflows leveraging LangChain, LangGraph, and Gemini 1.5 Pro.",
       "Implement comprehensive AI Agent Evaluation suites using Ragas, TruLens, and LangSmith for automated RAG faithfulness and tool trajectory testing.",
-      "Implement high-performance semantic search and knowledge retrieval engines using vector databases (FAISS, ChromaDB, Vertex AI Vector Search).",
       "Automate enterprise CI/CD pipelines with Docker, GitHub Actions, Google Cloud Run, and resilient AWS microservices deployment."
     ],
-    techStack: ["Python", "FastAPI", "React", "LangChain", "LangGraph", "Google Cloud (Vertex AI, Gemini)", "Ragas Eval", "Vector DBs", "AWS", "Docker", "GitHub Actions"]
+    techStack: ["Python", "FastAPI", "React", "Core Banking Systems", "GitHub Copilot", "Performance Optimization", "LangChain", "LangGraph", "Google Cloud (Vertex AI, Gemini)", "Ragas Eval", "Vector DBs", "AWS", "Docker", "GitHub Actions"]
   },
   {
     company: "Infosys",
     role: "Senior Consultant",
     period: "Nov 2023 – Jan 2026",
-    location: "Hyderabad, India",
+    location: "Bangalore, India",
     type: "Full-time",
     color: "from-blue-500 to-indigo-600",
     highlights: [
-      "Led full-stack architecture and engineering for mission-critical enterprise applications using React.js, Node.js, and FastAPI.",
+      "Led full-stack architecture and feature engineering for enterprise banking and financial platforms using React.js, Node.js, and FastAPI.",
+      "Integrated GitHub Copilot into the engineering lifecycle for accelerated test writing, boilerplate reduction, and rapid feature prototyping.",
+      "Executed critical performance tuning and query optimization across distributed services, reducing database bottlenecks and boosting transaction throughput by 30%.",
       "Built AI-powered enterprise knowledge assistants and search solutions leveraging OpenAI, Azure OpenAI, Google Cloud, LangChain, and RAG pipelines.",
       "Engineered automated RAG evaluation frameworks with metric tracking for context precision, answer relevance, and red-teaming guardrails.",
       "Designed fault-tolerant microservices and cloud-native serverless architectures deployed on AWS and Google Cloud.",
-      "Reduced deployment turnaround times substantially through automated containerization and CI/CD pipelines.",
       "Mentored junior engineers and spearheaded cross-functional technical design and architecture reviews."
     ],
-    techStack: ["React.js", "Node.js", "FastAPI", "Azure OpenAI", "Google Cloud", "LangChain", "RAG & Eval", "AWS Lambda", "PostgreSQL", "Docker"]
+    techStack: ["React.js", "Node.js", "FastAPI", "GitHub Copilot", "Banking & FinTech", "Performance Optimization", "Azure OpenAI", "Google Cloud", "LangChain", "RAG & Eval", "AWS Lambda", "PostgreSQL", "Docker"]
   },
   {
     company: "Truelancer",
@@ -148,6 +151,21 @@ export const EXPERIENCES: Experience[] = [
       "Optimized query performance and REST API throughput for internal engineering metrics and tooling."
     ],
     techStack: ["React.js", "Django", "Python", "REST APIs", "Jenkins", "Bamboo", "Docker"]
+  },
+  {
+    company: "ZMOT",
+    role: "Web Developer",
+    period: "Sep 2017 – Oct 2018",
+    location: "Hyderabad, India",
+    type: "Full-time",
+    color: "from-teal-500 to-cyan-600",
+    highlights: [
+      "Engineered and maintained high-performance responsive web applications and interactive client portals using JavaScript (ES6+), HTML5, CSS3, and React.",
+      "Developed RESTful APIs and backend integration routines for content delivery, dynamic forms, and third-party marketing analytics platforms.",
+      "Collaborated cross-functionally with UI/UX designers and product managers to translate design prototypes into pixel-perfect, responsive web interfaces.",
+      "Optimized client-side rendering performance, image assets, and cross-browser compatibility, achieving a 30%+ improvement in page load speeds."
+    ],
+    techStack: ["JavaScript", "HTML5", "CSS3", "React", "Node.js", "REST APIs", "Bootstrap", "MySQL", "Git"]
   }
 ];
 
@@ -176,8 +194,32 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "smartseth-observability-hub",
-    title: "SmartSeth Multi-Cloud Observability & Automated SSL Hub",
+    id: "core-banking-platform",
+    title: "Enterprise Core Banking Modernization & High-Throughput Transaction Engine",
+    category: "Core Banking, FinTech & Performance Engineering",
+    description: "Mission-critical core banking transaction orchestration and account ledger platform powering real-time payments, balance tracking, and high-volume financial workflows. Built with AI-assisted Copilot feature engineering, ACID transactional consistency, multi-tier Redis caching, and aggressive performance optimization.",
+    architectureDetails: [
+      "High-throughput distributed ledger and payment processing microservices handling 25,000+ peak TPS with zero double-entry errors and strict transactional guarantees.",
+      "AI-accelerated feature engineering leveraging GitHub Copilot across team workflows for rapid API prototyping, automated test harness creation, and domain code modernization.",
+      "Multi-tier low-latency caching architecture combining Redis distributed caches with PostgreSQL read replicas, slashing query response times by 42%.",
+      "Asynchronous event-driven messaging utilizing Kafka and Redis PubSub for real-time audit event logging, compliance tracking, and fraud anomaly dispatch.",
+      "Hardened banking security with SOX/PCI-DSS compliance, mTLS inter-service encryption, and automated zero-downtime blue/green rollouts on Docker & AWS/Kubernetes."
+    ],
+    technologies: ["Python", "FastAPI", "React.js", "GitHub Copilot", "PostgreSQL", "Redis", "Kafka", "Docker", "AWS (ECS, Lambda)", "Microservices"],
+    metrics: "25,000+ Peak TPS with <45ms SLA & 42% latency reduction",
+    badge: "Core Banking & High Performance",
+    accentColor: "#0ea5e9",
+    flowSteps: [
+      { step: "1. Copilot-Assisted Scaffolding", detail: "Rapid feature synthesis, contract definitions & automated unit test suites" },
+      { step: "2. Idempotent Ingress", detail: "High-concurrency API gateway with strict payload validation & deduplication" },
+      { step: "3. Two-Phase Ledger Commit", detail: "Distributed transactional consistency with ACID guarantees" },
+      { step: "4. Redis Multi-Tier Cache", detail: "Sub-millisecond ledger balance lookups & cache warming" },
+      { step: "5. Real-Time Event Audit", detail: "Audit trail dispatch & regulatory compliance telemetry" }
+    ]
+  },
+  {
+    id: "multicloud-observability-ssl-hub",
+    title: "Enterprise Multi-Cloud Observability & Automated SSL Hub",
     category: "Observability, Kubernetes & SSL Security",
     description: "Centralized cluster observability dashboard and automated Let's Encrypt certificate manager providing real-time in-cluster Kubernetes pod log streaming, reverse-proxy ingress routing, and multi-namespace TLS secret synchronization.",
     architectureDetails: [
@@ -273,6 +315,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "LangChain & LangGraph", level: 96, featured: true },
       { name: "Multi-Agent Systems & Tool Calling", level: 94, featured: true },
+      { name: "GitHub Copilot & AI Code Synthesis", level: 96, featured: true },
       { name: "Hybrid RAG & Semantic Search", level: 97, featured: true },
       { name: "OpenAI, Azure OpenAI & Gemini APIs", level: 95, featured: true },
       { name: "Vector DBs (FAISS, ChromaDB, Vertex AI Vector)", level: 92, featured: true },
@@ -308,6 +351,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     iconName: "Server",
     skills: [
       { name: "Python (FastAPI, Django, Pydantic)", level: 96, featured: true },
+      { name: "Core Banking Systems & Financial APIs", level: 94, featured: true },
+      { name: "Performance Optimization & Low-Latency Tuning", level: 95, featured: true },
       { name: "Node.js & Express.js", level: 92, featured: true },
       { name: "REST APIs, SSE & WebSockets", level: 95, featured: true },
       { name: "Microservices Architecture & Event Queues", level: 94, featured: true },

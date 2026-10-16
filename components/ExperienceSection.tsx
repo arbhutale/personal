@@ -30,7 +30,7 @@ export default function ExperienceSection() {
             Professional <span className="text-gradient-purple">Work Experience</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
-            8+ years architecting mission-critical platforms, pioneering Generative AI applications, and engineering scalable cloud microservices across premier technology organizations.
+            9+ years architecting mission-critical platforms, pioneering Generative AI applications, and engineering scalable cloud microservices across premier technology organizations.
           </p>
         </div>
 

@@ -94,7 +94,7 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
             {/* Quick Metrics Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-2xl mt-8">
               <div className="glass-card p-3 rounded-2xl text-center">
-                <div className="text-2xl font-black text-sky-600 dark:text-brand-cyan">8+</div>
+                <div className="text-2xl font-black text-sky-600 dark:text-brand-cyan">9+</div>
                 <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-0.5">Years Exp</div>
               </div>
               <div className="glass-card p-3 rounded-2xl text-center">
@@ -244,7 +244,7 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
                     </div>
                     <p className="text-sky-400 dark:text-brand-cyan">$ langgraph --invoke</p>
                     <p className="text-slate-300 dark:text-slate-400 mt-1">✓ Initialized Supervisor Agent</p>
-                    <p className="text-slate-300 dark:text-slate-400">✓ Context loaded: 8+ Yrs Enterprise Exp</p>
+                    <p className="text-slate-300 dark:text-slate-400">✓ Context loaded: 9+ Yrs Enterprise Exp</p>
                     <p className="text-slate-300 dark:text-slate-400">✓ RAG Vector Store status: 100% indexed</p>
                     <p className="text-emerald-400 mt-1">&gt; Ready for enterprise collaboration.</p>
                   </div>
@@ -255,7 +255,7 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
                 <div className="mt-5 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                    <span>8+ Years Verified Enterprise Track Record</span>
+                    <span>9+ Years Verified Enterprise Track Record</span>
                   </div>
                 </div>
 

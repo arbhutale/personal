@@ -111,24 +111,24 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </h3>
             <div className="space-y-1.5 text-xs">
               <div>
-                <span className="font-bold text-slate-900">Generative AI: </span>
-                <span className="text-slate-700">LangChain, LangGraph, RAG, AI Agents, Multi-Agent Systems, OpenAI & Azure OpenAI APIs, Vector Databases (FAISS, ChromaDB, Pinecone), Semantic Search</span>
+                <span className="font-bold text-slate-900">Generative AI & AI Tooling: </span>
+                <span className="text-slate-700">GitHub Copilot, LangChain, LangGraph, RAG, AI Agents, Multi-Agent Systems, OpenAI & Azure OpenAI APIs, Vector Databases (FAISS, ChromaDB, Pinecone), Semantic Search</span>
               </div>
               <div>
-                <span className="font-bold text-slate-900">Backend: </span>
-                <span className="text-slate-700">Python, FastAPI, Node.js, Express.js, REST APIs, Microservices Architecture, Design Patterns</span>
+                <span className="font-bold text-slate-900">Backend & Core Banking: </span>
+                <span className="text-slate-700">Core Banking Platforms, Performance Optimization & Latency Tuning, Python, FastAPI, Node.js, Express.js, REST APIs, Microservices Architecture, Event Queues</span>
               </div>
               <div>
                 <span className="font-bold text-slate-900">Frontend: </span>
                 <span className="text-slate-700">React.js, Next.js, Angular, JavaScript, TypeScript, HTML5, CSS3, Material UI, Tailwind CSS</span>
               </div>
               <div>
-                <span className="font-bold text-slate-900">Databases: </span>
-                <span className="text-slate-700">MongoDB, PostgreSQL, Redis</span>
+                <span className="font-bold text-slate-900">Databases & Caching: </span>
+                <span className="text-slate-700">MongoDB, PostgreSQL, Redis (In-Memory Caching & Query Latency Optimization)</span>
               </div>
               <div>
                 <span className="font-bold text-slate-900">Cloud & DevOps: </span>
-                <span className="text-slate-700">AWS (EC2, S3, Lambda, ECS), Docker, Jenkins, Bamboo, GitHub Actions, CI/CD Pipelines</span>
+                <span className="text-slate-700">AWS (EC2, S3, Lambda, ECS), Google Cloud (Vertex AI, Cloud Run), Docker, Jenkins, Bamboo, GitHub Actions, CI/CD Pipelines</span>
               </div>
             </div>
           </div>
