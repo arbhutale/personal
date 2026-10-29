@@ -38,7 +38,7 @@ export interface EvalMetric {
 
 export const PERSONAL_INFO = {
   name: "Bhutale Anil Kumar",
-  title: "Lead / Senior Full Stack & Generative AI Engineer",
+  title: "Lead Full Stack & Generative AI Engineer",
   experienceYears: "9+",
   location: "Hyderabad, India",
   phone: "+91 8500004216",
@@ -46,7 +46,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/arbhutale/",
   github: "https://github.com/arbhutale",
   website: "https://ar.bhutale.in",
-  bio: "Lead / Senior Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, high-throughput Core Banking applications, and resilient multi-cloud architectures. Deep technical expertise in orchestrating multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Champion of AI-augmented engineering using GitHub Copilot for rapid feature delivery, code quality, and aggressive performance optimization across distributed financial systems.",
+  bio: "Lead Full Stack & Generative AI Engineer with 9+ years of progressive engineering leadership architecting enterprise-scale platforms, high-throughput Core Banking applications, and resilient multi-cloud architectures. Deep technical expertise in AWS Bedrock, multi-agent systems (LangChain, LangGraph), advanced RAG retrieval pipelines, AI agent evaluation (Ragas, TruLens, LangSmith), and high-throughput Python/FastAPI and Node.js microservices. Proven engineering leader championing AI-augmented development with GitHub Copilot for rapid feature delivery, architectural governance, and aggressive performance optimization across distributed financial systems.",
 };
 
 export const EVAL_METRICS: EvalMetric[] = [
@@ -90,39 +90,94 @@ export const EVAL_METRICS: EvalMetric[] = [
 export const EXPERIENCES: Experience[] = [
   {
     company: "Lloyds Technology Centre",
-    role: "Senior Software Engineer",
+    role: "Lead / Senior Software Engineer",
     period: "Jan 2026 – Present",
     location: "Hyderabad, India",
     type: "Full-time",
     color: "from-emerald-500 to-teal-600",
     highlights: [
+      "Technical Lead spearheading architecture and development of scalable enterprise applications using React, Python, FastAPI, AWS, and AWS Bedrock.",
+      "Build Generative AI solutions, AI Agents, and multi-agent workflows using LangChain, LangGraph, and AWS Bedrock foundation models (Claude 3.5 Sonnet, Titan).",
+      "Implement semantic search and knowledge retrieval solutions using vector databases, embeddings, and hybrid retrieval pipelines.",
+      "Lead cross-functional engineering teams, conduct architectural reviews, and implement automated CI/CD pipelines using Docker, GitHub Actions, and AWS services.",
       "Architect, develop, and deliver high-availability Core Banking applications, spearheading end-to-end rollout of mission-critical features and secure transactional workflows.",
       "Pioneer AI-assisted engineering with GitHub Copilot across daily workflows, accelerating feature delivery, automated test case synthesis, and boilerplate modernization by 35%+.",
-      "Spearhead system-wide performance optimization across core banking microservices—refactoring database queries, fine-tuning indexing, and integrating Redis caching to slash API latencies by 42% under high concurrency.",
-      "Design and engineer scalable enterprise full-stack solutions utilizing React, Python, FastAPI, Google Cloud (Vertex AI), and AWS cloud infrastructure.",
-      "Build production-grade Generative AI solutions, AI Agents, and multi-agent workflows leveraging LangChain, LangGraph, and Gemini 1.5 Pro.",
-      "Implement comprehensive AI Agent Evaluation suites using Ragas, TruLens, and LangSmith for automated RAG faithfulness and tool trajectory testing.",
-      "Automate enterprise CI/CD pipelines with Docker, GitHub Actions, Google Cloud Run, and resilient AWS microservices deployment."
+      "Spearhead system-wide performance optimization across core banking microservices—refactoring database queries, fine-tuning indexing, and integrating Redis caching to slash API latencies by 42% under high concurrency."
     ],
-    techStack: ["Python", "FastAPI", "React", "Core Banking Systems", "GitHub Copilot", "Performance Optimization", "LangChain", "LangGraph", "Google Cloud (Vertex AI, Gemini)", "Ragas Eval", "Vector DBs", "AWS", "Docker", "GitHub Actions"]
+    techStack: [
+      "AWS Bedrock",
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "AWS",
+      "Lambda",
+      "ECS Fargate",
+      "API Gateway",
+      "EventBridge",
+      "Step Functions",
+      "S3",
+      "SES",
+      "Secrets Manager",
+      "CloudWatch",
+      "DynamoDB",
+      "MySQL/Aurora",
+      "AWS CDK",
+      "CloudFormation",
+      "CircleCI",
+      "SonarCloud",
+      "OpenTelemetry",
+      "Docker",
+      "GitHub Actions",
+      "LangChain",
+      "LangGraph",
+      "Core Banking Systems"
+    ]
   },
   {
     company: "Infosys",
-    role: "Senior Consultant",
+    role: "Lead / Senior Consultant",
     period: "Nov 2023 – Jan 2026",
-    location: "Bangalore, India",
+    location: "Hyderabad, India",
     type: "Full-time",
     color: "from-blue-500 to-indigo-600",
     highlights: [
-      "Led full-stack architecture and feature engineering for enterprise banking and financial platforms using React.js, Node.js, and FastAPI.",
+      "Served as Technical Lead orchestrating end-to-end architecture and feature delivery for enterprise banking and financial platforms using React.js, Node.js, Python, and FastAPI.",
+      "Built AI-powered solutions, conversational agents, and knowledge assistants leveraging AWS Bedrock, OpenAI, Azure OpenAI, LangChain, and RAG pipelines.",
+      "Architected scalable microservices and cloud-native serverless architectures deployed on AWS.",
+      "Led and mentored engineering squads, conducted technical design and architecture reviews, and reduced deployment turnaround time through CI/CD automation.",
       "Integrated GitHub Copilot into the engineering lifecycle for accelerated test writing, boilerplate reduction, and rapid feature prototyping.",
-      "Executed critical performance tuning and query optimization across distributed services, reducing database bottlenecks and boosting transaction throughput by 30%.",
-      "Built AI-powered enterprise knowledge assistants and search solutions leveraging OpenAI, Azure OpenAI, Google Cloud, LangChain, and RAG pipelines.",
-      "Engineered automated RAG evaluation frameworks with metric tracking for context precision, answer relevance, and red-teaming guardrails.",
-      "Designed fault-tolerant microservices and cloud-native serverless architectures deployed on AWS and Google Cloud.",
-      "Mentored junior engineers and spearheaded cross-functional technical design and architecture reviews."
+      "Executed critical performance tuning and query optimization across distributed services, reducing database bottlenecks and boosting transaction throughput by 30%."
     ],
-    techStack: ["React.js", "Node.js", "FastAPI", "GitHub Copilot", "Banking & FinTech", "Performance Optimization", "Azure OpenAI", "Google Cloud", "LangChain", "RAG & Eval", "AWS Lambda", "PostgreSQL", "Docker"]
+    techStack: [
+      "AWS Bedrock",
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "AWS",
+      "Lambda",
+      "ECS Fargate",
+      "API Gateway",
+      "EventBridge",
+      "Step Functions",
+      "S3",
+      "SES",
+      "Secrets Manager",
+      "CloudWatch",
+      "DynamoDB",
+      "MySQL/Aurora",
+      "AWS CDK",
+      "CloudFormation",
+      "CircleCI",
+      "SonarCloud",
+      "OpenTelemetry",
+      "Node.js",
+      "Docker",
+      "Azure OpenAI",
+      "LangChain",
+      "RAG"
+    ]
   },
   {
     company: "Truelancer",
@@ -132,11 +187,11 @@ export const EXPERIENCES: Experience[] = [
     type: "Contract",
     color: "from-purple-500 to-pink-600",
     highlights: [
-      "Delivered end-to-end full stack web platforms using React.js, Node.js, Express.js, Python, FastAPI, and MongoDB.",
-      "Developed AI-powered document processing, automated content generation, and RAG workflows for enterprise contextual search.",
-      "Containerized microservices applications using Docker and deployed highly available solutions on AWS and Google Cloud."
+      "Delivered full stack applications using React.js, Node.js, Express.js, Python, FastAPI, and MongoDB.",
+      "Developed AI-powered document processing, content generation, and RAG workflows for enterprise search.",
+      "Containerized applications using Docker and deployed highly available solutions on AWS."
     ],
-    techStack: ["React.js", "Node.js", "FastAPI", "MongoDB", "RAG", "Docker", "AWS", "Google Cloud"]
+    techStack: ["React.js", "Node.js", "Express.js", "Python", "FastAPI", "MongoDB", "RAG", "Docker", "AWS", "DynamoDB", "S3", "CloudWatch"]
   },
   {
     company: "Qualcomm India",
@@ -146,14 +201,14 @@ export const EXPERIENCES: Experience[] = [
     type: "Full-time",
     color: "from-amber-500 to-orange-600",
     highlights: [
-      "Developed high-throughput enterprise applications, backend microservices, and engineering analytics dashboards using React.js and Django.",
-      "Integrated Jenkins and Bamboo CI/CD pipelines for automated Docker-based build verification and multi-environment deployments.",
+      "Developed enterprise applications, backend services, and engineering dashboards using React.js and Django.",
+      "Integrated Jenkins and Bamboo pipelines for automated Docker-based deployments.",
       "Optimized query performance and REST API throughput for internal engineering metrics and tooling."
     ],
-    techStack: ["React.js", "Django", "Python", "REST APIs", "Jenkins", "Bamboo", "Docker"]
+    techStack: ["React.js", "Django", "Python", "REST APIs", "Jenkins", "Bamboo", "Docker", "Git", "MySQL"]
   },
   {
-    company: "ZMOT",
+    company: "ZMOT Pro Pvt",
     role: "Web Developer",
     period: "Sep 2017 – Oct 2018",
     location: "Hyderabad, India",
@@ -165,7 +220,7 @@ export const EXPERIENCES: Experience[] = [
       "Collaborated cross-functionally with UI/UX designers and product managers to translate design prototypes into pixel-perfect, responsive web interfaces.",
       "Optimized client-side rendering performance, image assets, and cross-browser compatibility, achieving a 30%+ improvement in page load speeds."
     ],
-    techStack: ["JavaScript", "HTML5", "CSS3", "React", "Node.js", "REST APIs", "Bootstrap", "MySQL", "Git"]
+    techStack: ["JavaScript (ES6+)", "HTML5", "CSS3", "React", "Node.js", "REST APIs", "Bootstrap", "MySQL", "Git"]
   }
 ];
 
@@ -313,6 +368,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: "Generative AI & Agent Architectures",
     iconName: "BrainCircuit",
     skills: [
+      { name: "AWS Bedrock (Claude, Titan) & Foundation Models", level: 96, featured: true },
       { name: "LangChain & LangGraph", level: 96, featured: true },
       { name: "Multi-Agent Systems & Tool Calling", level: 94, featured: true },
       { name: "GitHub Copilot & AI Code Synthesis", level: 96, featured: true },
@@ -371,13 +427,26 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     ]
   },
   {
+    category: "Cloud, AWS Serverless & DevOps",
+    iconName: "Cloud",
+    skills: [
+      { name: "AWS Bedrock & Serverless Orchestration", level: 96, featured: true },
+      { name: "AWS (Lambda, ECS Fargate, API Gateway, Step Functions)", level: 95, featured: true },
+      { name: "S3, SES, Secrets Manager & CloudWatch", level: 94, featured: true },
+      { name: "AWS CDK & CloudFormation (IaC)", level: 92, featured: true },
+      { name: "CircleCI, GitHub Actions & SonarCloud", level: 92, featured: true },
+      { name: "OpenTelemetry & Observability", level: 90, featured: true },
+      { name: "Docker Containerization & Kubernetes", level: 94, featured: true }
+    ]
+  },
+  {
     category: "Databases, Vector Stores & Caching",
     iconName: "Database",
     skills: [
+      { name: "DynamoDB & MySQL/Aurora", level: 93, featured: true },
       { name: "ChromaDB, FAISS & Pinecone", level: 92, featured: true },
       { name: "Redis Caching & Pub/Sub", level: 94, featured: true },
-      { name: "MongoDB", level: 90, featured: true },
-      { name: "PostgreSQL", level: 88, featured: true },
+      { name: "MongoDB & PostgreSQL", level: 90, featured: true },
       { name: "Vector Index Tuning (HNSW, IVFFlat)", level: 88 }
     ]
   }

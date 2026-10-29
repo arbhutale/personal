@@ -112,23 +112,27 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="space-y-1.5 text-xs">
               <div>
                 <span className="font-bold text-slate-900">Generative AI & AI Tooling: </span>
-                <span className="text-slate-700">GitHub Copilot, LangChain, LangGraph, RAG, AI Agents, Multi-Agent Systems, OpenAI & Azure OpenAI APIs, Vector Databases (FAISS, ChromaDB, Pinecone), Semantic Search</span>
+                <span className="text-slate-700">AWS Bedrock (Claude 3.5 Sonnet, Titan), LangChain, LangGraph, RAG, AI Agents, Multi-Agent Systems, OpenAI & Azure OpenAI APIs, Vector Databases (FAISS, ChromaDB, Pinecone), Semantic Search, GitHub Copilot</span>
               </div>
               <div>
                 <span className="font-bold text-slate-900">Backend & Core Banking: </span>
-                <span className="text-slate-700">Core Banking Platforms, Performance Optimization & Latency Tuning, Python, FastAPI, Node.js, Express.js, REST APIs, Microservices Architecture, Event Queues</span>
+                <span className="text-slate-700">Python, FastAPI, Node.js, Express.js, REST APIs, Microservices Architecture, Design Patterns, Core Banking Platforms, Performance Optimization & Latency Tuning</span>
               </div>
               <div>
                 <span className="font-bold text-slate-900">Frontend: </span>
-                <span className="text-slate-700">React.js, Next.js, Angular, JavaScript, TypeScript, HTML5, CSS3, Material UI, Tailwind CSS</span>
+                <span className="text-slate-700">React, React.js, Next.js, JavaScript, TypeScript, HTML5, CSS3, Material UI, Tailwind CSS</span>
               </div>
               <div>
-                <span className="font-bold text-slate-900">Databases & Caching: </span>
-                <span className="text-slate-700">MongoDB, PostgreSQL, Redis (In-Memory Caching & Query Latency Optimization)</span>
+                <span className="font-bold text-slate-900">Cloud & Serverless (AWS): </span>
+                <span className="text-slate-700">AWS, AWS Bedrock, Lambda, ECS Fargate, API Gateway, EventBridge, Step Functions, S3, SES, Secrets Manager, CloudWatch, EC2, Google Cloud</span>
               </div>
               <div>
-                <span className="font-bold text-slate-900">Cloud & DevOps: </span>
-                <span className="text-slate-700">AWS (EC2, S3, Lambda, ECS), Google Cloud (Vertex AI, Cloud Run), Docker, Jenkins, Bamboo, GitHub Actions, CI/CD Pipelines</span>
+                <span className="font-bold text-slate-900">Data Stores & Databases: </span>
+                <span className="text-slate-700">DynamoDB, MySQL/Aurora, MongoDB, PostgreSQL, Redis (In-Memory Caching & Latency Optimization)</span>
+              </div>
+              <div>
+                <span className="font-bold text-slate-900">Infrastructure, DevOps & Quality: </span>
+                <span className="text-slate-700">AWS CDK, CloudFormation, CircleCI, SonarCloud, OpenTelemetry, Docker, Jenkins, Bamboo, GitHub Actions, CI/CD Pipelines</span>
               </div>
             </div>
           </div>
@@ -144,6 +148,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <div className="flex items-center justify-between font-bold text-slate-900">
                     <span className="text-sm text-slate-950 font-black">{exp.company} — <span className="font-semibold text-slate-700">{exp.role}</span></span>
                     <span className="text-slate-600 font-mono text-[11px]">{exp.period} | {exp.location}</span>
+                  </div>
+                  <div className="mt-1 text-[11px] text-slate-700 font-medium">
+                    <span className="font-bold text-slate-900">Tech Stack: </span>
+                    <span className="font-mono text-slate-600">{exp.techStack.join(', ')}</span>
                   </div>
                   <ul className="list-disc list-outside pl-4 mt-1.5 space-y-1 text-slate-700 leading-relaxed">
                     {exp.highlights.map((h, hIdx) => (
